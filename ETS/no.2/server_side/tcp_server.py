@@ -88,7 +88,7 @@ def run_server(server_address):
         try:
 
             threads[thread_index] = threading.Thread(
-                target=send_data, args=(client_address, connection))
+                target=send_d, args=(client_address, connection))
             threads[thread_index].start()
             thread_index += 1
 
@@ -96,7 +96,7 @@ def run_server(server_address):
         except ssl.SSLError as error_ssl:
             logging.warning(f"SSL error: {str(error_ssl)}")
             
-def send_data(client_address, connection):
+def send_d(client_address, connection):
     selesai = False
     data_received = ""  # string
     while True:
@@ -107,7 +107,7 @@ def send_data(client_address, connection):
             if "\r\n\r\n" in data_received:
                 selesai = True
 
-            if (selesai == True):
+            if (selesai != False):
                 hasil = proses_request(data_received)
                 logging.warning(f"hasil proses: {hasil}")
 
