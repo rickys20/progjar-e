@@ -1,3 +1,4 @@
+from importlib.resources import is_resource
 import socket
 import logging
 import json
@@ -124,7 +125,7 @@ def send_d(client_address, connection):
 
 if __name__=='__main__':
     try:
-        run_server(('0.0.0.0', 12000))
+        run_server(('0.0.0.0', 12000), is_secure=false)
     except KeyboardInterrupt:
         logging.warning("Control-C: Program berhenti")
         exit(0)
