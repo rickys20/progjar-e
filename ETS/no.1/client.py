@@ -9,6 +9,7 @@ import threading
 import os
 import datetime
 
+#ip mesin 1
 server_address = ('172.16.16.101', 12000)
 
 
@@ -136,8 +137,6 @@ if __name__ == '__main__':
     
     for request in total_request:
         req_multithread(request, array_data)
-
-        # comparation_data.append([worker, request_t, response_count, f"{execution_time * 1000:.3f} ms", f"{average_latency * 1000:.3f} ms"])
 
     t_header = ["Thread Count", "Request Count", "Response Count", "Waktu"]
     print(tabulate(array_data, headers=t_header, tablefmt="fancy_grid"))
