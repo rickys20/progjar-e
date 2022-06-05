@@ -108,7 +108,7 @@ def remote_delete(filename=""):
     
 
 if __name__=='__main__':
-    server_address=('172.16.16.101',6667)
+    server_address=('0.0.0.0',6667)
     remote_list()
     os.chdir("./upload_file")
     # remote_upload('1.txt')
